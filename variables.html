@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>變數</title>
+</head>
+<body>
+
+<script>
+
+    'use strict'
+
+    let today = '0628'
+    let name  = '李東穎'
+    name = 'kemie'
+    let x = 3
+    let y = 5
+
+    console.log('我的名字' + name + ',今天是' + today)
+
+    console.log(`${name}你好，今天是${today}`)
+
+    let age = 13
+
+    if( age >= 18){
+        //  `  模板字串符號 tab上方
+        console.log(`年齡為${age}, 可以喝酒`)
+    }else{
+        console.log(`年齡為${age}, 不可以喝酒`)
+    } //age end
+
+    let account = 'dean'
+    let password = '123456'
+
+    if (account == 'ayn2110' && password == '123456'){
+        console.log('成功登入')
+    }else{
+        console.log('帳號密碼錯誤，請重新輸入')
+    }//if account end
+
+    let area = '台中'
+    
+    if( age <= 12 || area == '台北'){
+        console.log('優待票')
+    }else{
+        console.log('一般票')
+    }
+
+    let num = 0;
+    // num = 0
+    // console.log( num )
+    
+    // num = num + 1
+    // num++
+    // num++
+    // console.log(num)
+
+    while (num <= 10){
+        num = num + 1
+        console.log(num)
+    }
+    //定義i=0；當
+    // （let 變數定義 ;變數條件 ;變數更新 
+    for(let i=0; i <=10; i++ ){
+        console.log('遞增數字',i)
+    }//for end
+
+    for(let i=5; i>0;i--){
+        console.log('遞減數字',i)
+    }
+
+    // 陣列
+    let student = ['東穎', '欣穎']
+    console.log(student[0])
+    console.log(student[1])
+
+    console.log('名單人數',student.lenght)
+
+    for(let i = 0 ; i < student.length; i++){
+        console.log(`學號${i+1} ,學員名稱: ${student[i]}`)
+    }
+
+    let pet = {
+        name:'小白',
+        age:3,
+        color:'white',
+        bark: function(){
+            alert('旺旺')
+        }
+    }
+    console.log(pet.name)//點計法
+    console.log(pet['name'])//括弧計法
+    pet.bark()
+    
+    
+</script>
+
+</body>
+</html>

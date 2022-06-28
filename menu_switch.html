@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>選單開關</title>
+
+    <style>
+        nav{
+            display: none;
+        }
+        nav.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <a href="javascript:;" id="btn-nav-toggle" class="icon-menu">menu</a>
+
+    <!-- #primary_navigation>ul>li*4{item$} -->
+    <nav id="primary-navigation">
+        <ul>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+        </ul>
+    <nav> 
+
+
+    <script>
+
+        let btnNavToggle= document.getElementById('btn-nav-toggle')
+        let primaryNavigation= document.getElementById('primary-navigation')
+        document.getElementById('btn-nav-toggle').addEventListener('click',openNav)
+
+
+        
+        // 函式名稱
+        function openNav(){
+            console.log('點按鈕打開主導覽')
+            if( document.getElementById('primary-navigation').classList.contains('active') == true){
+                document.getElementById('primary-navigation').classList.remove('active')
+                //假如主導覽有active類別時執行
+
+            }else{
+                //假如主導覽沒有active類別時執行
+                document.getElementById('primary-navigation').classList.add('active')
+                document.getElementById('btn-nav-toggle').textContent='x'
+                
+            }
+            //if end
+           
+           
+
+
+        }//openNav end
+
+
+    </script>
+</body>
+</html>
