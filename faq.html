@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Document</title>
+
+    <style>
+         *{
+    box-sizing:border-box;
+   }
+
+        .container{
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+        .question-content{
+            border: 1px solid black;
+            border-radius: 4px;
+            padding: 16px 24px;
+            margin-bottom: 24px;
+            cursor: pointer;
+
+        }
+        .question-content.active .answer{
+            display: block;
+        }
+        .question-content.active .icon-arrow{
+            transform: rotate(180deg);
+        }
+        .answer{
+            display: none;
+        }
+        .question{
+            position: relative;
+        }
+        .icon-arrow{
+            transition: all .3s;
+            position: absolute;
+            width: 30px;
+            line-height: 30px;
+            text-align: center;
+            top:-5px;
+            right:0px;
+        }
+    </style>
+</head>
+<body>
+   
+  
+    <div class="container">
+        <!-- .question-content*5>.question{q$$}>.icon-arrow^.answer{answer} -->
+        <h3>FAQ</h3>
+        <div class="question-content">
+            <div class="question">開封後可以保存多久呢？
+                <div class="icon-arrow">
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+            </div>
+            <div class="answer">開封後請冰冰箱喔～，建議一個月內食用完畢。</div>
+        </div>
+        <div class="question-content">
+            <div class="question">可以面交嗎？
+                <div class="icon-arrow"><i class="fa-solid fa-angle-down"></i></div>
+            </div>
+            <div class="answer">answer</div>
+        </div>
+        <div class="question-content">
+            <div class="question">q03
+                <div class="icon-arrow"><i class="fa-solid fa-angle-down"></i></div>
+            </div>
+            <div class="answer">answer</div>
+        </div>
+        <div class="question-content">
+            <div class="question">q04
+                <div class="icon-arrow"><i class="fa-solid fa-angle-down"></i></div>
+            </div>
+            <div class="answer">answer</div>
+        </div>
+        <div class="question-content">
+            <div class="question">q05
+                <div class="icon-arrow"><i class="fa-solid fa-angle-down"></i></div>
+            </div>
+            <div class="answer">answer</div>
+        </div>
+    </div>
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+
+        $('.question-content').on('click',function(){
+            $(this).toggleClass('active');
+            $(this).siblings().removeClass('active')
+
+        })
+
+    </script>
+</body>
+</html>

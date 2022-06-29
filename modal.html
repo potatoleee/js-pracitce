@@ -32,17 +32,39 @@
     </style>
 </head>
 <body>
-    <a href="#" onclick="'openModal();" id="'open-modal">打開蓋板</a>
+    <a href="javascript:" onclick="openModal();" id="'open-modal">打開蓋板</a>
     <div class="modal-wrapper">
         <div class="modal-content">
             <div id="btn-close-switch" class="btn-close">x</div>
-            廣告區塊</div>
+            廣告區塊
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        
+        </div>
     </div>
 
     <script>
+        let modalWrapper =  document .getElementsByClassName ('modal-wrapper')[0]
+        let btnCloseSwitch = document.getElementById('btn-close-switch')
+
+        btnCloseSwitch.addEventListener('click' , closeModal )
+
         function openModal(){
-            console.log('test')
-        }
+            modalWrapper.classList.add('active')
+        }//openModal end
+
+        function closeModal(e){
+            modalWrapper.classList.remove('active')
+
+            if (e.target ==this){
+                
+            }
+        }//openModal end
+
+
     </script>
 </body>
 </html>

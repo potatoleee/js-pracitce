@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .tab-link{
+            display: flex;
+        }
+        .tab-link>a{
+            text-decoration: none;
+            width: 32%;
+            margin: 1%;
+            padding: 16px;
+            display:block;
+            text-align: center;
+            background-color: rgb(123, 176, 63);
+            color:black
+        }
+        .tab-link>a.active{
+            background-color: aquamarine;
+        }
+        .tab-content{
+            display: none;
+        }
+        .tab-content.active{
+            display: block;
+        }
+        .img-fluid{
+            max-width: 100%;
+            width: 50%;
+        }
+
+        /* .active 這招好用 先寫在css再去用切換 */
+    </style>
+</head>
+<body>
+    <!-- .tab-link>a[href="#tab$"]*3 -->
+    <div class="tab-link">
+        <a href="#tab1" class="active">商品資訊</a>
+        <a href="#tab2">出價紀錄</a>
+        <a href="#tab3">問與答</a>
+    </div>
+  
+    <!-- #tab$[內容$]*3 -->
+    <div id="tab1" class="tab-content active">
+        <img src="img/woodbox.jpg" class="img-fluid" alt="">內容1</div>
+    <div id="tab2" class="tab-content">內容2</div>
+    <div id="tab3" class="tab-content">內容3</div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+        $('.tab-link>a').on('click',function(){
+            $(this).addClass('active');
+            $(this).siblings().removeClass('active');
+
+            $($(this).attr('href')).addClass('active')
+            $($(this).attr('href')).siblings().removeClass('active')
+
+
+
+        })
+
+    </script>
+</body>
+</html>
